@@ -11,19 +11,38 @@
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 	<title>{% block title %}{% endblock %}</title>
 </head>
-<body style="margin: 5%; background-color: black">
+<body class="background" style="margin: 5%">
 	<div class="navigationBar">
 		<nav class="navbar">
 			<a class="navbar-brand" href="#">Aravind</a>
     		<span class="navbar-text">
-    			<a class="navbar-brand" href="#">Language</a>
-    			<a class="navbar-brand" href="#">Dark Mode</a>
-    			<a class="navbar-brand" href="#">Options</a>
+				<!-- <a class="navbar-brand" href="#">Language</a> -->    			
+				<a class="navbar-brand" href="#" onclick="return toggleMode()"><i id="darkMode" class="fi fi-rr-sun"></i></a>
+    			<!-- <a class="navbar-brand" href="#">Options</a> -->
     		</span>
 		</nav>
 	</div>
 	<div>
 		{% block content %}{% endblock %}
 	</div>
+<script>
+	var r = document.querySelector(':root');
+
+	function toggleMode(){
+		var rs = getComputedStyle(r,null);
+		element = document.getElementById('darkMode')
+		if(rs.getPropertyValue('--base')=="white"){
+			r.style.setProperty('--base','black')
+			r.style.setProperty('--bg','white')
+			element.classList.remove('fi-rr-sun')
+			element.classList.add('fi-rr-moon')
+		}else{
+			r.style.setProperty('--base','white')
+			r.style.setProperty('--bg','black')
+			element.classList.remove('fi-rr-moon')
+			element.classList.add('fi-rr-sun')
+		}
+	}
+</script>
 </body>
 </html>

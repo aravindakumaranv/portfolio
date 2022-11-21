@@ -1,10 +1,20 @@
+:root{
+    --highlight: #50d292;
+    --base:white;
+    --bg:black;
+}
+
+.background{
+    background-color: var(--bg)
+}
+
 .navigationBar{
     background-color: transparent;
 }
 
 .navbar-brand{
     font-family: 'Oswald', sans-serif;
-    color: white
+    color: var(--base)
 }
 
 .jumbotron{
@@ -14,20 +24,20 @@
 
 .jumbotronBase{
     font-family: 'Oswald', sans-serif;
-    color: white;
+    color: var(--base);
     display: inline-block;
     text-transform: uppercase;
 }
 
 .jumbotronBaseDesc{
     font-family: 'Oswald', sans-serif;
-    color: white;
+    color: var(--base);
     display: inline-block;
 }
 
 .jumbotronHighlight{
     font-family: 'Oswald', sans-serif;
-    color: #50d292;
+    color: var(--highlight);
     display: inline-block;
     text-transform: uppercase;
 }
@@ -42,5 +52,5 @@
 
 .arrow{
     font-size: 125%;
-    color: white
+    color: var(--base)
 }
