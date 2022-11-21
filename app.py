@@ -18,7 +18,7 @@ def index():
 	f.close()
 
 	# render HTML with count variable
-	return render_template("index.html", count=count)
+	return render_template("home.html", count=count)
 
 if __name__ == "__main__":
-	app.run()
+	app.run(debug=True)
