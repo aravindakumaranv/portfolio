@@ -9,6 +9,7 @@
 
 .jumbotron{
     background-color: transparent;
+    margin-top: 5%
 }
 
 .jumbotronBase{
@@ -33,4 +34,13 @@
 
 .jumbotronContent{
     text-align: center
+}
+
+.jumbotronLinks{
+    margin-top: 5%
+}
+
+.arrow{
+    font-size: 125%;
+    color: white
 }
