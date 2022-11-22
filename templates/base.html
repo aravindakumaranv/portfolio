@@ -9,15 +9,15 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">	
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-	<title>{% block title %}{% endblock %}</title>
+	<title>Aravinda Kumaran</title>
 </head>
 <body class="background" style="margin: 5%">
 	<div class="navigationBar">
 		<nav class="navbar">
-			<a class="navbar-brand" href="#">Aravind</a>
+			<a class="navbar-brand clickable" href="home">Aravind</a>
     		<span class="navbar-text">
 				<!-- <a class="navbar-brand" href="#">Language</a> -->    			
-				<a class="navbar-brand" href="#" onclick="return toggleMode()"><i id="darkMode" class="fi fi-rr-sun"></i></a>
+				<a class="navbar-brand clickable" href="#" onclick="return toggleMode()"><i id="darkMode" class="fi fi-rr-sun"></i></a>
     			<!-- <a class="navbar-brand" href="#">Options</a> -->
     		</span>
 		</nav>

@@ -46,6 +46,10 @@
     text-align: center
 }
 
+.jumbotronContentLeftAligned{
+    text-align: left;
+}
+
 .jumbotronLinks{
     margin-top: 5%
 }
@@ -53,4 +57,8 @@
 .arrow{
     font-size: 125%;
     color: var(--base)
+}
+
+.clickable:hover {
+    color: var(--highlight);
 }

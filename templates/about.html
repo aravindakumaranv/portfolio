@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-9">
+				<div class="jumbotronContentLeftAligned">
+				  	<div class="display-4"><h2 class="display-4 jumbotronHighlight">About</h2></div>
+				  	<div>
+				  		<h4 class="jumbotronBaseDesc">I'm a Data Analytics student, software developer and a creative coder</h4>
+				  	</div>
+				  	<div class="jumbotronLinks">
+				  		<a class="clickable" href="{{url_for('static', filename='assets/CV.pdf')}}" target="_blank">
+				  			<i class="fi fi-rr-arrow-circle-right arrow"></i>
+				  			<h4 class="jumbotronBaseDesc">CV</h4>
+				  		</a>
+				  	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
