@@ -62,3 +62,58 @@
 .clickable:hover {
     color: var(--highlight);
 }
+
+.footer{
+    position: fixed;
+    height: 10%;
+    bottom: 0;
+    width: 90%;
+}
+
+.sti_container {
+  position: relative;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.btn .btn-text {
+  max-width: 0;
+  display: inline-block;
+  -webkit-transition: color .1s 1s, max-width 2s;
+  transition: color .1s 1s, max-width 2s;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--base);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn:hover .btn-text {
+  max-width: 300px;
+  color: var(--base);
+}
+
+.modal-content{
+    background-color: var(--bg)
+}
+
+.spotifyTrack{
+    font-family: 'Oswald', sans-serif;
+    color: var(--base)
+}

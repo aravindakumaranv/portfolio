@@ -25,8 +25,59 @@
 	<div>
 		{% block content %}{% endblock %}
 	</div>
+	<div class="footer">
+		<div class="container" style="padding-right: 0; margin-right: 0;">
+			<div class="row">
+				<div class="col-md-12 text-right">
+					<div class="sti_container">
+						<form>
+							<a id=spotifyGetTrack>
+								<button id="spotifyGetTrack" class="btn spotifyTrack clickable" type="button" data-toggle="modal" data-target="#spotifyModal">
+							    	<a class="navbar-brand clickable">
+							    		<i class="fi fi-rr-headphones"></i>
+							   			<span class="btn-text">Listen with me!</span>
+							    	</a>
+							  	</button>
+							</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="spotifyModal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body" style="text-align: center">
+						<h4 class="spotifyTrack" id="spotify_track_div"></h4>
+						<img id="track_image" class="d-block w-100" src="static/assets/img/cache/current_track.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
 	var r = document.querySelector(':root');
+
+	$(document).ready(function() {
+		console.log("success")
+    	bg = localStorage.getItem('bg');
+    	base = localStorage.getItem('base');
+    	r.style.setProperty('--bg',bg)
+		r.style.setProperty('--base',base)	
+		element = document.getElementById('darkMode')
+		darkMode = localStorage.getItem('darkMode')
+		if(darkMode == 'sun')
+		{
+			element.classList.remove('fi-rr-moon')
+			element.classList.add('fi-rr-sun')
+		}else{
+			element.classList.remove('fi-rr-sun')
+			element.classList.add('fi-rr-moon')
+		}
+	});
 
 	function toggleMode(){
 		var rs = getComputedStyle(r,null);
@@ -36,13 +87,35 @@
 			r.style.setProperty('--bg','white')
 			element.classList.remove('fi-rr-sun')
 			element.classList.add('fi-rr-moon')
+			localStorage.setItem('base','black')
+			localStorage.setItem('bg','white')
+			localStorage.setItem('darkMode','moon')
 		}else{
 			r.style.setProperty('--base','white')
 			r.style.setProperty('--bg','black')
 			element.classList.remove('fi-rr-moon')
 			element.classList.add('fi-rr-sun')
+			localStorage.setItem('base','white')
+			localStorage.setItem('bg','black')
+			localStorage.setItem('darkMode','sun')
 		}
 	}
+
+	$("button#spotifyGetTrack").click(function(e) {
+
+	    e.preventDefault();
+	    $.ajax({
+	        type: "GET",
+	        url: "/spotify_get_current_track",
+	        success: function(result) {
+	        	document.getElementById('track_image').src = result.track_image_filename;
+	        	$('#spotify_track_div').html(result.display_string);
+	        },
+	        error: function(result) {
+	        	$('#spotify_track_div').html("Please Try Again");
+	        }
+	    });
+	});
 </script>
 </body>
 </html>
