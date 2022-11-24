@@ -35,6 +35,12 @@
     display: inline-block;
 }
 
+.jumbotronHighlightDesc{
+    font-family: 'Oswald', sans-serif;
+    color: var(--highlight);
+    display: inline-block;
+}
+
 .jumbotronHighlight{
     font-family: 'Oswald', sans-serif;
     color: var(--highlight);

@@ -21,6 +21,14 @@ def home():
 def about():
 	return render_template("about.html")
 
+@app.route("/work")
+def work():
+	return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+	return render_template("about.html")
+
 @app.route('/spotify_get_current_track')
 def spotify_get_current_track():
 	client_id = "f9b92a146a3b4a4b90c558b23c82b918"

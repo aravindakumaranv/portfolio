@@ -6,7 +6,8 @@
 	  	<div class="display-4"><h2 class="display-4 jumbotronBase">Hey, I'm </h2> <h2 class="display-4 jumbotronHighlight">Aravinda Kumaran</h2></div>
 	  	<div class="display-4"><h2 class="display-4 jumbotronBase">But you can call me </h2> <h2 class="display-4 jumbotronHighlight">Ara</h2></div>
 	  	<div>
-	  		<h4 class="jumbotronBaseDesc">I'm a Data Analytics student, software developer and a creative coder</h4>
+	  		<h4 class="jumbotronBaseDesc">I'm a </h4>
+	  		<h4 class="jumbotronHighlightDesc typing"></h4>
 	  	</div>
 	  	<div class="jumbotronLinks">
 	  		<a class="clickable" href="about">
@@ -16,4 +17,20 @@
 	  	</div>
 	</div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script src=
+"https://cdn.jsdelivr.net/npm/typed.js@2.0.11">
+    </script>
+    <script>
+        var typed = new Typed(".typing", {
+            strings: ["Data Analytics Student",
+            "Software Developer","Creative Coder"],
+              
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true,
+        });
+    </script>
 {% endblock %}
