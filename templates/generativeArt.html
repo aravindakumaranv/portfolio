@@ -1,0 +1,16 @@
+{% extends "gallery.html" %}
+
+{% block content %}
+<div class="jumbotronContent">
+  	<div class="display-4"><h2 class="display-4 jumbotronHighlight">Generative Art</h2></div>
+  	{% for art in artWorks %}
+  	<div class="d-flex justify-content-center">
+  		<div style="padding-top: 5%; max-width: 75%">
+		  	<img src="{{ art['path'] }}" alt="image alt text" class="galleryElement" />
+		  	<br>
+		  	<h4 class="jumbotronBaseDesc">{{ art["description"] }}</h4>
+		  </div>
+		</div>
+ 	{% endfor %}
+</div>
+{% endblock %}

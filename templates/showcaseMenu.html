@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotronContent">
+  	<div class="display-4"><h2 class="display-4 jumbotronHighlight">My Work</h2></div>
+  	<br><br>
+  	<div class="card-columns">
+  		{% for myWork in works %}
+	  		<a href={{ myWork["endpoint"] }}>
+			  	<div class="card workCard">
+			    	<div class="card-body">
+		      			{% with name=myWork["name"] %}
+							{% include "showcaseCard.html" %}
+						{% endwith %}
+			    	</div>
+			 	</div>
+			 </a>
+	 	{% endfor %}
+  	</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+	var test = 1
+	$(document).ready(function() {
+		$.ajax({ 
+            type: "GET",
+            url: "/fetchMyWorks",
+            data: null,
+            dataType: "json",
+            success: function(response_data){
+                console.log(response_data);
+            },
+            error : function(request,error){
+            	alert("request failed");
+            }
+        })	
+	});
+</script>
+{% endblock %}

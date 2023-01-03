@@ -23,11 +23,32 @@ def about():
 
 @app.route("/work")
 def work():
-	return render_template("about.html")
+	return render_template("showcaseMenu.html", works=fetchMyWorks())
 
 @app.route("/contact")
 def contact():
 	return render_template("about.html")
+
+@app.route("/generativeArt")
+def generativeArt():
+	return render_template("generativeArt.html", artWorks=fetchMyGenerativeArt())
+
+@app.route("/fetchMyWorks")
+def fetchMyWorks():
+	data = fetchDataJSON()
+	return data["myWork"]
+
+@app.route("/fetchMyGenerativeArt")
+def fetchMyGenerativeArt():
+	data = fetchDataJSON()
+	return data["generativeArt"]
+
+def fetchDataJSON():
+	data = None
+	with open('./static/data.json','r') as f:
+		data = json.load(f)
+	return(data)
+
 
 @app.route('/spotify_get_current_track')
 def spotify_get_current_track():

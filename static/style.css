@@ -10,6 +10,8 @@
 
 .navigationBar{
     background-color: transparent;
+    position: fixed;
+    width: 90%;
 }
 
 .navbar-brand{
@@ -76,6 +78,12 @@
     width: 90%;
 }
 
+.header{
+    position: fixed;
+    height: 10%;
+    width: 90%;
+}
+
 .sti_container {
   position: relative;
 }
@@ -122,4 +130,26 @@
 .spotifyTrack{
     font-family: 'Oswald', sans-serif;
     color: var(--base)
+}
+
+.workCard{
+    background-color: transparent;
+    font-family: 'Oswald', sans-serif;
+    color: var(--base);
+    border-color: var(--base);
+    border-width: medium;
+}
+
+.workCard:hover{
+    background-color: var(--base);
+    border-color: var(--bg);
+    color: var(--bg)
+}
+
+.card-columns{
+    column-count: 2 
+}
+
+.galleryElement{
+    max-width: 100%
 }
